@@ -43,8 +43,6 @@ int main(){
 /*
     /EX2
 
-    /EX2
-*/
 
 #include "utilityClass.hpp"
 
@@ -67,6 +65,44 @@ int main(){
     cdisplay(sSet1);
     cdisplay(sSet2);
     cdisplay(sSet3);
+
+    return 0;
+}
+    /EX2
+*/
+
+/*
+    /EX3
+
+    /EX3
+*/
+
+#include "utilityClass.hpp"
+
+using namespace std;
+
+int main(){
+
+    Randomize();
+    // / Smaller 
+    // set<string, myLess<string>> sSet1;
+    // set<string, less<string>> sSet2;
+
+    // / Greater
+    // set<string, myGreater<string>> sSet1;
+    // set<string, greater<string>> sSet2;
+
+    // / Sizes
+    // set<string, myLessSize<string>> sSet1;
+    // set<string, myGreaterSize<string>> sSet1;
+    set<string, myEqualSize<string>> sSet1;
+
+
+    cfill(sSet1, 100);
+    // cfill(sSet2, 100);
+
+    cdisplay(sSet1);
+    // cdisplay(sSet2);
 
     return 0;
 }

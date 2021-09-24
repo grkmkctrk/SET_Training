@@ -43,5 +43,51 @@ void cdisplay(Con& con){
         );std::cout << "\n";
 }
 
+/////////////////////////////////////////////////////////
+// Preds
+
+template<class T>
+class myLess{
+private:
+public:
+    constexpr bool operator()(const T& r1, const T& r2) const{
+        return r1 < r2;
+    }
+};
+
+template<class T>
+class myGreater{
+private:
+public:
+    constexpr bool operator()(const T& r1, const T& r2) const{
+        return r1 > r2;
+    }
+};
+
+template<class T>
+class myLessSize{
+private:
+public:
+    constexpr bool operator()(const T& r1, const T& r2) const{
+        return r1.size() < r2.size();
+    }
+};
+template<class T>
+class myGreaterSize{
+private:
+public:
+    constexpr bool operator()(const T& r1, const T& r2) const{
+        return r1.size() > r2.size();
+    }
+};
+
+template<class T>
+class myEqualSize{
+private:
+public:
+    constexpr bool operator()(const T& r1, const T& r2) const{
+        return r1.size() == r2.size();
+    }
+};
 
 #endif
