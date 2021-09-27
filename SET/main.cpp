@@ -148,8 +148,6 @@ int main(){
 /*
     /EX5
 
-    /EX5
-*/
 
 #include "utilityClass.hpp"
 
@@ -188,5 +186,72 @@ int main(){
     // cout << "iterator : " << *iter3 << endl;
 
     
+    return 0;
+}
+    /EX5
+*/
+
+
+
+/*
+    /EX6
+
+
+
+
+#include "utilityClass.hpp"
+
+using namespace std;
+
+int main(){
+
+    set<string> sSet1;
+
+    Randomize();
+
+    if(sSet1.insert("gorkem").second)
+        cout << "there is gorkem s" << endl;
+    // if(sSet1.insert("gorkem").first)
+    //     cout << "there is mehmet f" << endl;
+
+    cout << *(sSet1.insert("alican").first) << endl;
+
+
+
+    return 0;
+}
+    /EX6
+*/
+
+
+/*
+    /EX7
+
+    /EX7
+*/
+
+
+
+#include "utilityClass.hpp"
+
+using namespace std;
+
+int main(){
+
+    set<string> sSet1;
+
+    Randomize();
+
+    // pair<set<string>::iterator, bool> result = sSet1.insert("gorkem");
+    pair<set<string>::const_iterator, bool> result = sSet1.insert("gorkem");
+
+    if(result.second){
+        cout << "there is gorkem in here" << endl;
+    }else{
+        cout << "there is not gorkem in here" << endl;
+    }
+
+    cout << *result.first << '\n';
+
     return 0;
 }
