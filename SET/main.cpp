@@ -74,8 +74,6 @@ int main(){
 /*
     /EX3
 
-    /EX3
-*/
 
 #include "utilityClass.hpp"
 
@@ -104,5 +102,91 @@ int main(){
     cdisplay(sSet1);
     // cdisplay(sSet2);
 
+    return 0;
+}
+    /EX3
+*/
+
+/*
+    /EX4
+
+#include "utilityClass.hpp"
+
+using namespace std;
+
+int main(){
+
+    set<string> sSet1; // default
+    
+    Randomize();
+
+    cfill(sSet1, 10);
+    cdisplay(sSet1);
+
+    cout << sSet1.size() << endl; // unique elements number
+
+    // if(sSet1.count("Gorkem"))
+    //     cout << "There is Gorkem\n";
+    // else
+    //     cout << "There is no Gorkem\n";
+
+
+    // sSet1.erase("Gorkem");
+    // cout << "After erasing" << endl;
+    // cdisplay(sSet1);
+
+    auto pos = sSet1.find("Gorkem");
+    cout << "found : " << *pos << endl;
+
+    return 0;
+}
+
+    /EX4
+*/
+
+
+/*
+    /EX5
+
+    /EX5
+*/
+
+#include "utilityClass.hpp"
+
+using namespace std;
+
+int main(){
+
+    set<int> sSet1; // default
+    
+    Randomize();
+
+    for (size_t i = 0; i < 10; i++)
+    {
+        sSet1.insert(i);
+    }
+
+    cdisplay(sSet1);
+
+    // if(sSet1.count(3)) cout << "There is 3" << endl;
+    // else cout << "There is no 3" << endl;
+
+    // if(sSet1.count(3)) sSet1.erase(3);
+    // else sSet1.insert(3);
+
+    // cdisplay(sSet1);
+
+    auto pos = sSet1.find(4);
+    set<int>::iterator iter1 = sSet1.find(4);
+    set<int>::const_iterator iter2 = sSet1.find(4);
+    // set<int>::reverse_iterator iter3 = sSet1.find(4); // error
+
+
+    cout << "auto : " << *pos << endl;
+    cout << "iterator : " << *iter1 << endl;
+    cout << "iterator : " << *iter2 << endl;
+    // cout << "iterator : " << *iter3 << endl;
+
+    
     return 0;
 }
