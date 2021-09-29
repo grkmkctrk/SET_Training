@@ -72,6 +72,7 @@ public:
         return r1.size() < r2.size();
     }
 };
+
 template<class T>
 class myGreaterSize{
 private:
@@ -89,5 +90,27 @@ public:
         return r1.size() == r2.size();
     }
 };
+
+
+template<class T, class Con>
+void myCopyIT(T beg, T end, Con& con){
+
+    for (
+        ; 
+        beg != end; 
+        con.insert(*beg++)
+        );
+}
+
+template<class Con1, class Con2>
+void myCopyCon(Con1& con1, Con2& con2){
+    auto beg = con1.begin();
+
+    for (
+        ;
+        beg != con1.end();
+        con2.insert(*beg++)
+        );
+}
 
 #endif

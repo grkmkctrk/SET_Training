@@ -227,8 +227,6 @@ int main(){
 /*
     /EX7
 
-    /EX7
-*/
 
 
 
@@ -252,6 +250,86 @@ int main(){
     }
 
     cout << *result.first << '\n';
+
+    return 0;
+}
+    /EX7
+*/
+
+
+/*
+    /EX8
+
+#include "utilityClass.hpp"
+
+using namespace std;
+
+int main(){
+
+    Randomize();
+
+    // set<string> sSet1;
+    // set<string> sSet2;
+
+    // cfill(sSet1, 10);
+
+    // cdisplay(sSet1);
+    // cdisplay(sSet2);
+
+    // copy(sSet1.begin(), sSet1.end(), inserter(sSet2, sSet2.begin()));
+
+    // cout << "\t$$$$$ After copying $$$$$" << endl;
+    // cdisplay(sSet1);
+    // cdisplay(sSet2);
+
+    set<int> iSet1;
+    set<int> iSet2;
+
+    for (
+        size_t i = 0; 
+        i < 10; 
+        iSet1.insert(i),
+        i++
+        );
+    
+
+    cdisplay(iSet1);
+    cdisplay(iSet2);
+
+    copy(iSet1.begin(), iSet1.end(), inserter(iSet2, iSet2.begin()));
+
+    cout << "\t$$$$$ After copying $$$$$" << endl;
+    cdisplay(iSet1);
+    cdisplay(iSet2);
+
+}
+    /EX8
+*/
+
+
+
+#include "utilityClass.hpp"
+
+using namespace std;
+
+int main(){
+
+    Randomize();
+    
+    set<string> sSet1;
+    set<string> sSet2;
+
+    cfill(sSet1, 10);
+
+    cdisplay(sSet1);
+    cdisplay(sSet2);
+
+    myCopyIT(sSet1.begin(), sSet1.end(), sSet2);
+    // myCopyCon(sSet1, sSet2);
+
+    cout << "\t$$$$$ After copying $$$$$" << endl;
+    cdisplay(sSet1);
+    cdisplay(sSet2);
 
     return 0;
 }
