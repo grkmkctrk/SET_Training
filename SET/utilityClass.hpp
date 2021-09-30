@@ -113,4 +113,18 @@ void myCopyCon(Con1& con1, Con2& con2){
         );
 }
 
+template<class T, class U>
+T myFindCon(T beg, T end, U searchVar){
+    while(*beg != searchVar && beg++ != end );
+    return beg;
+}   
+
+template<class Gcon, class U>
+typename Gcon::iterator  myFindCon(Gcon& con, U searchVar){
+    auto beg = con.begin();
+    while(
+        *beg != searchVar 
+        && beg++ != con.end());
+    return beg;
+}  
 #endif

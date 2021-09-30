@@ -307,6 +307,8 @@ int main(){
 */
 
 
+/*
+    /EX9
 
 #include "utilityClass.hpp"
 
@@ -333,3 +335,77 @@ int main(){
 
     return 0;
 }
+    /EX9
+*/
+
+/*
+    /EX10
+
+
+#include "utilityClass.hpp"
+
+using namespace std;
+
+int main(){
+
+    set<string> sSet1;
+
+    Randomize();
+
+    cfill(sSet1, 10);
+    cdisplay(sSet1);
+
+    string s;
+
+    cout << "The name needs to be found" << endl;
+    cin >> s;
+
+    if (sSet1.find(s) != sSet1.end())
+        cout << s << " is found" << endl;
+    else
+        cout << s << " is not found" << endl;
+
+    cout << *(sSet1.find(s)) << endl;
+
+    if(sSet1.erase(s))
+        cout << s << " is erased" << endl;
+    else
+        cout << s << " is not erased" << endl;
+
+    cdisplay(sSet1);
+
+    return 0;
+}
+    /EX10
+    
+*/
+
+#include "utilityClass.hpp"
+
+using namespace std;
+
+int main(){
+
+    set<string> sSet1;
+
+    Randomize();
+
+    cfill(sSet1, 10);
+    cdisplay(sSet1);
+
+    string s;
+
+    cout << "The name needs to be found" << endl;
+    cin >> s;
+
+    // auto pos = myFindIT(sSet1.begin(), sSet1.end(), s);
+    auto pos = myFindCon(sSet1, s);
+
+    cout << *pos << endl;
+
+
+
+    return 0;
+
+}
+
