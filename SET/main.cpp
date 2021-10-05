@@ -380,6 +380,10 @@ int main(){
     
 */
 
+
+/*
+    /EX11
+
 #include "utilityClass.hpp"
 
 using namespace std;
@@ -403,9 +407,101 @@ int main(){
 
     cout << *pos << endl;
 
-
-
     return 0;
 
 }
 
+
+    /EX11
+*/
+
+
+/*
+    /EX12
+
+#include "utilityClass.hpp"
+
+using namespace std;
+
+int main(){
+
+    Randomize();
+
+    set<string> sSet1;
+    multiset<string> sMultiset1;
+
+    cfill(sSet1, 10);
+    cfill(sMultiset1, 10);
+
+    cout << "sSet : "; cdisplay(sSet1); 
+    cout << "sMultiset : "; cdisplay(sMultiset1); 
+
+
+    return 0;
+}
+    /EX12
+*/
+
+
+/*
+    /EX13
+
+#include "utilityClass.hpp"
+
+using namespace std;
+
+int main(){
+
+    Randomize();
+
+    multiset<string> sMultiset1;
+
+    cfill(sMultiset1, 10);
+
+    cout << "sMultiset : "; cdisplay(sMultiset1); 
+
+    string s;
+    cout << "Name : "; cin >> s;
+
+    multiset<string>::iterator iter1 = sMultiset1.lower_bound(s);
+    multiset<string>::iterator iter2 = sMultiset1.upper_bound(s);
+
+    // cout << *iter1 << " " << *iter2 << endl;
+    cout << distance(iter1, iter2);
+
+    return 0;
+}
+    /EX13
+*/
+
+/*
+    /EX14
+    /EX14
+*/
+
+#include "utilityClass.hpp"
+
+using namespace std;
+
+int main(){
+
+    Randomize();
+
+    multiset<string> sMultiset1;
+
+    cfill(sMultiset1, 10);
+
+    cout << "sMultiset : "; cdisplay(sMultiset1); 
+
+    string s;
+    cout << "Name : "; cin >> s;
+
+    multiset<string>::iterator iter1 = sMultiset1.lower_bound(s);
+    multiset<string>::iterator iter2 = sMultiset1.upper_bound(s);
+
+    // cout << *iter1 << " " << *iter2 << endl;
+    cout << myDistanceIt(iter1, iter2) << endl;
+    cout << myDistanceCon(sMultiset1, s) << endl;
+
+    return 0;
+}

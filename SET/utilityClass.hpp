@@ -127,4 +127,22 @@ typename Gcon::iterator  myFindCon(Gcon& con, U searchVar){
         && beg++ != con.end());
     return beg;
 }  
+
+template<class T>
+int myDistanceIt(T first, T last){
+    int dist = 0;
+    for (
+        ; 
+        *first != *last; 
+        first++, dist++);
+    return dist;
+}
+
+template<class Con, class U>
+int myDistanceCon(Con& con, U str){
+    return myDistanceIt(
+        con.lower_bound(str), 
+        con.upper_bound(str));
+}
+
 #endif
