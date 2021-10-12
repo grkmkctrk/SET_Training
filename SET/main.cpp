@@ -476,8 +476,6 @@ int main(){
 
 /*
     /EX14
-    /EX14
-*/
 
 #include "utilityClass.hpp"
 
@@ -502,6 +500,164 @@ int main(){
     // cout << *iter1 << " " << *iter2 << endl;
     cout << myDistanceIt(iter1, iter2) << endl;
     cout << myDistanceCon(sMultiset1, s) << endl;
+
+    return 0;
+}
+
+    /EX14
+*/
+
+/*
+    /EX 15
+
+
+#include "utilityClass.hpp"
+
+using namespace std;
+
+
+int main(){
+
+    multiset<string> sSet1;
+
+    Randomize();
+
+    cfill(sSet1, 10);
+    cdisplay(sSet1);
+
+    string s;
+
+    cout << "The name needs to be found : ";
+    cin >> s;
+
+    pair<
+            multiset<string>::const_iterator, 
+            multiset<string>::const_iterator
+        > sP = sSet1.equal_range(s);
+
+
+    cout << distance(sP.first, sP.second) << endl;
+    cout << myDistanceIt(sP.first, sP.second) << endl;
+    return 0;
+}
+    /EX 15
+*/
+
+
+/*
+    /EX 16
+
+
+#include "utilityClass.hpp"
+
+using namespace std;
+
+
+int main(){
+
+    set<string> s1, s2;
+
+    vector<string> sVec1;
+
+    Randomize();
+
+    cfill(s1, 10);
+    cfill(s2, 10);
+    
+    cdisplay(s1);
+    cdisplay(s2);
+
+    // set_intersection(
+    //     s1.begin(), s1.end(), 
+    //     s2.begin(), s2.end(), 
+    //     back_inserter(sVec1)
+    //     );
+
+    set_union(
+        s1.begin(), s1.end(), 
+        s2.begin(), s2.end(), 
+        back_inserter(sVec1)
+        );
+
+
+    cdisplay(sVec1);
+
+    return 0;
+}
+    /EX 16
+*/
+
+/*
+    /EX 17
+
+#include "utilityClass.hpp"
+
+using namespace std;
+
+
+int main(){
+
+    set<string> s1, s2;
+
+    vector<string> sVec1;
+
+    Randomize();
+
+    cfill(s1, 10);
+    cfill(s2, 10);
+    
+    cdisplay(s1);
+    cdisplay(s2);
+
+    // mySetIntersectionIT(
+    //     s1.begin(), s1.end(),
+    //     s2.begin(), s2.end(),
+    //     sVec1
+    // );
+
+    mySetIntersectionCon(s1, s2, sVec1);
+
+    cdisplay(sVec1);
+    
+    // string ifade < > overlooadlari alfabetik olarak  
+    // karsilastirma yapar
+
+    return 0;
+}
+    /EX 17
+*/
+
+#include "utilityClass.hpp"
+
+using namespace std;
+
+
+int main(){
+
+    set<string> s1, s2;
+
+    vector<string> sVec1;
+
+    Randomize();
+
+    cfill(s1, 10);
+    cfill(s2, 10);
+    
+    cdisplay(s1);
+    cdisplay(s2);
+
+    // mySetUnionIT(
+    //     s1.begin(), s1.end(),
+    //     s2.begin(), s2.end(),
+    //     sVec1
+    // );
+
+    mySetUnionCon(s1, s2, sVec1);
+
+    cdisplay(sVec1);
+    
+    // string ifade < > overlooadlari alfabetik olarak  
+    // karsilastirma yapar
 
     return 0;
 }

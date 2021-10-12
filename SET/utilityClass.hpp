@@ -145,4 +145,85 @@ int myDistanceCon(Con& con, U str){
         con.upper_bound(str));
 }
 
+template<class input1, class input2, class resultCon>
+void mySetIntersectionIT(
+    input1 beg1, input1 end1, 
+    input2 beg2, input2 end2, 
+    resultCon& out){
+
+        while(beg1 != end1 && beg2 != end2){
+            if(*beg1 < *beg2){
+                beg1++;
+            }else if(*beg2 < *beg1){
+                ++beg2;
+            }else{
+                out.push_back(*beg1);
+                ++beg1;++beg2;
+            }
+        }
+
+        /* ** to understand this, run code below ** 
+      
+            string ss1 = "Ahmetcan", ss2 = "Berathan";
+            cout << (ss1 < ss2) << endl;
+            cout << (ss2 < ss1) << endl;
+      
+        *******************************************/
+}
+
+template<class gConI1, class gConI2, class gConO>
+void mySetIntersectionCon(gConI1& conI1, gConI2& conI2, gConO& conO){
+
+    auto first1 = conI1.begin();
+    auto first2 = conI2.begin();
+
+    // mySetIntersectionIT(first1, last1, first2, last2, conO);
+
+    while(first1 != conI1.end() && first2 != conI2.end()){
+        std::cout << *first1 << std::endl;
+        if(*first1 < *first2) first1++;
+        else if(*first1 > *first2) first2++;
+        else{
+            conO.push_back(*first1);
+            first1++;first2++;
+        }
+    }
+
+}
+
+template<class input1, class input2, class resultCon>
+void mySetUnionIT(
+    input1 beg1, input1 end1, 
+    input2 beg2, input2 end2, 
+    resultCon& out){
+
+        while(beg1 != end1 && beg2 != end2){
+            if(*beg1 < *beg2) out.push_back(*beg1++);
+            else if(*beg2 < *beg1) out.push_back(*beg2++);
+            else{
+                out.push_back(*beg1);
+                ++beg1;++beg2;
+            }
+        }
+
+    }
+
+template<class gConI1, class gConI2, class gConO>
+void mySetUnionCon(gConI1& conI1, gConI2& conI2, gConO& conO){
+
+    auto beg1 = conI1.begin();
+    auto beg2 = conI2.begin();
+
+    // mySetUnionIT(first1, last1, first2, last2, conO);
+
+    while(beg1 != conI1.end() && beg2 != conI2.end()){
+        if(*beg1 < *beg2) conO.push_back(*beg1++);
+        else if(*beg2 < *beg1) conO.push_back(*beg2++);
+        else{
+            conO.push_back(*beg1);
+            ++beg1;++beg2;
+        }
+    }
+}
+
 #endif
